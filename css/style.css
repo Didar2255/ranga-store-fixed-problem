@@ -3,7 +3,7 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
-
+/* Display product style */
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -46,6 +46,8 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+
+/* responsive style */
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
