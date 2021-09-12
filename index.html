@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloth Matter</title>
+  <title>Shopper Goods Store</title>
   <link rel="stylesheet" href="./css/style.css" />
   <!-- Latest compiled and minified CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,20 +19,23 @@
 
 <body>
   <header></header>
-  <main class="main">
+  <main>
+    <section class="container mx-auto w-50">
+      <!-- search cloth section -->
+      <div class="input-group m-5 ">
+        <input type="text" class="form-control" placeholder="Search your favorite item"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary bg-danger text-white" type="button" id="button-addon2">Search</button>
+      </div>
+    </section>
     <section class="container">
-      <div class="search-field d-flex justify-content-center m-3">
-        <input type="text">
-        <button class="border border-2 rounded bg-info fw-bold">Search</button>
-      </div>
-      <div>
-
-      </div>
+      <!-- display product section -->
       <div class="row m-4">
         <div class="col-md-9 col-lg-9 col-sm-7 ">
           <div id="all-products" class="">
           </div>
         </div>
+        <!-- Buy product section -->
         <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
           <div class="cart" id="my-cart">
             <table class="table">
