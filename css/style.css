@@ -35,6 +35,13 @@ body {
   align-items: center;
   justify-content: center;
 }
+.product{
+  width: 16rem;
+  min-height:400px;
+}
+.product-card{
+  background-color: rgb(255, 242, 234);
+}
 .single-product {
   padding: 10px;
   transition: 0.6s;
