@@ -13,12 +13,12 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `
-    <div class="border p-3  m-2 shadow rounded product-card">
+    <div class="border p-3  m-2 rounded product-card single-product">
       <div>
         <img class="product-image " src=${image}></img>
       </div>
         <h5>${product.title.slice(0, 15)}</h5>
-        <h5>Category: ${product.category}</h5>
+        <h6>Category: ${product.category}</h6>
         <h5>Price: ${product.price}</h5>
         <h6>Coustomar rating : ${product.rating.rate}</h6>
         <p>Average rating : ${product.rating.count}</p>
