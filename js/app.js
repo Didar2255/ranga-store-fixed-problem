@@ -1,5 +1,5 @@
 const loadProducts = () => {
-  const url = `https://fakestoreapi.com/products`;
+  const url = `https://raw.githubusercontent.com/biswajitdasme/fakestore/main/db.json?fbclid=IwAR3YI8z-sn-GCcB4kl8frCxB-olI9VRyyEFCZTL0UKRxT0MvnAZ1WLxkYJM`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
@@ -13,12 +13,15 @@ const showProducts = (products) => {
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `
+    div.innerHTML = `<div class="border p-3 ">
+    <div>
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
+      <h4>Coustomar rating : ${product.rating.rate}</h4>
+      <h5>Avareg rating : ${product.rating.count}</h5>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
@@ -30,8 +33,9 @@ const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
 
-  updateTaxAndCharge(id);
+  updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
+  updateTotal();
 };
 
 const getInputValue = (id) => {
@@ -50,7 +54,7 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = value;
 };
 
 // update delivery charge and total Tax
@@ -76,4 +80,5 @@ const updateTotal = () => {
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal;
+  console.log(grandTotal)
 };
